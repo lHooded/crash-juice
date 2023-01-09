@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "crash_juice",
+  "version": "${version}",
+  "name": "Crash Juice",
+  "description": "Adds a potion which 'crashes' your/your enemy's game",
+  "authors": [
+    "lhooded"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/crash-juice/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.lhooded.crashjuice.CrashJuice"
+    ]
+  },
+  "mixins": [
+    "crash_juice.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.2",
+    "java": ">=17"
+  }
+}
