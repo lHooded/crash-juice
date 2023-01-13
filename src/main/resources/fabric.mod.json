@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "crash_juice",
+  "id": "crash-juice",
   "version": "${version}",
   "name": "Crash Juice",
   "description": "Adds a potion which 'crashes' your/your enemy's game",
@@ -18,7 +18,7 @@
     ]
   },
   "mixins": [
-    "crash_juice.mixins.json"
+    "crash-juice.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.12",

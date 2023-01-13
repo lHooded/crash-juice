@@ -4,6 +4,6 @@
   "item.minecraft.lingering_potion.effect.crash": "Lingering Crash Juice",
   "item.minecraft.tipped_arrow.effect.crash": "Arrow of Crash Juice",
   "effect.crash-juice.crash": "Crash",
-  "modmenu.summaryTranslation.crash-juice": "Adds potions and tipped arrows that crash the affected player.",
-  "modmenu.descriptionTranslation.crash-juice": "Adds regular, splash, lingering potions and tipped arrows that crash the affected player."
+  "modmenu.summaryTranslation.crash-juice": "Adds potions and tipped arrows that 'crash' the affected player.",
+  "modmenu.descriptionTranslation.crash-juice": "Adds potions and tipped arrows that disconnect the affected player and vaporise affected mobs"
 }

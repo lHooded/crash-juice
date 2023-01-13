@@ -2,27 +2,28 @@ package com.lhooded.crashjuice;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.InstantStatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
-import org.jetbrains.annotations.Nullable;
 
-public class CrashStatusEffect extends StatusEffect {
+public class CrashStatusEffect extends InstantStatusEffect {
     public CrashStatusEffect() {
-        super(StatusEffectCategory.HARMFUL, 0x301934);
+        super(StatusEffectCategory.HARMFUL, 0x000000);
     }
 
-    @Override
-    public boolean isInstant() {
-        return true;
-    }
-
-    @Override
-    public void applyInstantEffect(@Nullable Entity source, @Nullable Entity attacker, LivingEntity target, int amplifier, double proximity) {
-        if (target instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverplayer = (ServerPlayerEntity) target;
-            serverplayer.networkHandler.connection.disconnect(Text.of("bye"));
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+        if (entity instanceof ServerPlayerEntity serverPlayer) {
+            serverPlayer.networkHandler.connection.disconnect(Text.of(""));
+            return;
         }
+        if (entity.hasCustomName()) {
+            return;
+        }
+        if (entity instanceof TameableEntity && ((TameableEntity) entity).isTamed()) {
+            return;
+        }
+        entity.remove(Entity.RemovalReason.DISCARDED);
     }
 }

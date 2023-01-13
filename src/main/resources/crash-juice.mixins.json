@@ -4,9 +4,11 @@
   "package": "com.lhooded.crashjuice.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CrashJuiceArrowEntityAccessor",
+    "CrashJuiceRemoveArrowDamageMixin"
   ],
   "client": [
-    "CrashJuiceRecipeMixin"
+    "CrashJuiceRemoveGlintMixin"
   ],
   "injectors": {
     "defaultRequire": 1
